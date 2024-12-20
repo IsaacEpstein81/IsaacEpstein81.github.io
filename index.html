@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tech Startup Budget Dashboard</h1>
+        <h1>Super Duper Let's Not Go Broke Dashboard</h1>
 
         <div class="module-container">
             <!-- Scenario 1 -->
@@ -67,15 +67,18 @@
                 <div class="input-group">
                     <label>Monthly Revenue ($)</label>
                     <span id="revenue-value-1">0</span>
-                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="updateSlider(1, 'revenue')">
+                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="calculateBudget(1)">
                 </div>
 
                 <!-- Results -->
                 <div class="output-group">
                     <p>Total Expenses: $<span id="total-expenses-1">0</span></p>
                     <p>Remaining Funds: $<span id="remaining-funds-1">0</span></p>
+                    <p>Revenue/Income: $<span id="revenue-income-1">0</span></p> <!-- Add revenue/income line -->
+                    <p>Profit/Loss: <span id="profit-loss-1">$0</span></p>
                     <p>Months Left: <span id="months-left-1">0</span></p>
                 </div>
+                
             </div>
 
             <!-- Scenario 2 -->
@@ -134,15 +137,18 @@
                 <div class="input-group">
                     <label>Monthly Revenue ($)</label>
                     <span id="revenue-value-2">0</span>
-                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="updateSlider(2, 'revenue')">
+                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="calculateBudget(2)">
                 </div>
 
                 <!-- Results -->
                 <div class="output-group">
                     <p>Total Expenses: $<span id="total-expenses-2">0</span></p>
                     <p>Remaining Funds: $<span id="remaining-funds-2">0</span></p>
+                    <p>Revenue/Income: $<span id="revenue-income-2">0</span></p> <!-- Add revenue/income line -->
+                    <p>Profit/Loss: <span id="profit-loss-2">$0</span></p>
                     <p>Months Left: <span id="months-left-2">0</span></p>
                 </div>
+                
             </div>
 
             <!-- Scenario 3 -->
@@ -201,15 +207,18 @@
                 <div class="input-group">
                     <label>Monthly Revenue ($)</label>
                     <span id="revenue-value-3">0</span>
-                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="updateSlider(3, 'revenue')">
+                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="calculateBudget(3)">
                 </div>
 
                 <!-- Results -->
                 <div class="output-group">
                     <p>Total Expenses: $<span id="total-expenses-3">0</span></p>
                     <p>Remaining Funds: $<span id="remaining-funds-3">0</span></p>
+                    <p>Revenue/Income: $<span id="revenue-income-3">0</span></p> <!-- Add revenue/income line -->
+                    <p>Profit/Loss: <span id="profit-loss-3">$0</span></p>
                     <p>Months Left: <span id="months-left-3">0</span></p>
                 </div>
+                
             </div>
 
             <!-- Scenario 4 -->
@@ -268,15 +277,18 @@
                 <div class="input-group">
                     <label>Monthly Revenue ($)</label>
                     <span id="revenue-value-4">0</span>
-                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="updateSlider(4, 'revenue')">
+                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="calculateBudget(4)">
                 </div>
 
                 <!-- Results -->
                 <div class="output-group">
                     <p>Total Expenses: $<span id="total-expenses-4">0</span></p>
                     <p>Remaining Funds: $<span id="remaining-funds-4">0</span></p>
+                    <p>Revenue/Income: $<span id="revenue-income-4">0</span></p> <!-- Add revenue/income line -->
+                    <p>Profit/Loss: <span id="profit-loss-4">$0</span></p>
                     <p>Months Left: <span id="months-left-4">0</span></p>
                 </div>
+                
             </div>
 
             <!-- Scenario 5 -->
@@ -335,15 +347,18 @@
                 <div class="input-group">
                     <label>Monthly Revenue ($)</label>
                     <span id="revenue-value-5">0</span>
-                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="updateSlider(5, 'revenue')">
+                    <input type="range" class="input-revenue" min="0" max="200000" step="1000" value="0" oninput="calculateBudget(5)">
                 </div>
 
                 <!-- Results -->
                 <div class="output-group">
                     <p>Total Expenses: $<span id="total-expenses-5">0</span></p>
                     <p>Remaining Funds: $<span id="remaining-funds-5">0</span></p>
+                    <p>Revenue/Income: $<span id="revenue-income-5">0</span></p> <!-- Add revenue/income line -->
+                    <p>Profit/Loss: <span id="profit-loss-5">$0</span></p>
                     <p>Months Left: <span id="months-left-5">0</span></p>
                 </div>
+                
             </div>
 
         </div>

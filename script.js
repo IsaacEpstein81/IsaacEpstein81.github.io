@@ -10,7 +10,7 @@ function calculateBudget(scenario) {
     let flights = parseFloat(document.querySelector(`#scenario${scenario} .input-flights`).value);
     let misc = parseFloat(document.querySelector(`#scenario${scenario} .input-misc`).value);
     let funds = parseFloat(document.querySelector(`#scenario${scenario} .input-funds`).value);
-    let revenue = parseFloat(document.querySelector(`#scenario${scenario} .input-revenue`).value); // Monthly Revenue from the slider
+    let revenue = parseFloat(document.querySelector(`#scenario${scenario} .input-revenue`).value);
 
     // Function to add commas to numbers
     function formatNumber(num) {
@@ -32,9 +32,21 @@ function calculateBudget(scenario) {
 
     // Calculate total expenses
     let totalExpenses = salaries + rent + cloud + software + marketing + legal + insurance + flights + misc;
-    
+
     // Add monthly revenue to funding for the months calculation
     let totalFunds = funds + revenue; // This includes the revenue
+
+    // Calculate profit/loss
+    let profitLoss = revenue - totalExpenses;
+
+    // Format profit/loss
+    let formattedProfitLoss = profitLoss < 0 ? `-$${Math.abs(profitLoss).toLocaleString()}` : `$${profitLoss.toLocaleString()}`;
+
+    // Display total expenses, remaining funds, profit/loss, and revenue
+    document.getElementById(`total-expenses-${scenario}`).textContent = formatNumber(totalExpenses);
+    document.getElementById(`remaining-funds-${scenario}`).textContent = formatNumber(totalFunds);
+    document.getElementById(`revenue-income-${scenario}`).textContent = formatNumber(revenue);  // Add revenue display
+    document.getElementById(`profit-loss-${scenario}`).textContent = formattedProfitLoss;
 
     // Check if revenue is greater than total expenses, if so, it's profitable
     let monthsLeft;
@@ -45,19 +57,6 @@ function calculateBudget(scenario) {
         monthsLeft = (totalFunds / totalExpenses).toFixed(2);
     }
 
-    // Update the results for the scenario
-    document.getElementById(`total-expenses-${scenario}`).textContent = formatNumber(totalExpenses);
-    document.getElementById(`remaining-funds-${scenario}`).textContent = formatNumber(totalFunds);
+    // Update the months left result
     document.getElementById(`months-left-${scenario}`).textContent = monthsLeft;
-}
-
-// Function to sync the slider with the input number
-function updateSlider(scenario, type) {
-    let slider = document.querySelector(`#scenario${scenario} .input-${type}`);
-    
-    // Set the displayed value next to the slider
-    document.getElementById(`${type}-value-${scenario}`).textContent = slider.value;
-
-    // Recalculate the budget after value update
-    calculateBudget(scenario);
 }
